@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object "instructor1 : Instructor" as instructor1 {
+    firstName = "Nima"
+    lastName = "Davarpanah"
+    officeNumber = "3-2636"
+}
+
+object "textbook1 : Textbook" as textbook1 {
+    title = "Clean Code"
+    author = "Symere Woods"
+    publisher = "RocNation"
+}
+
+object "course : Course" as course {
+    courseName = "CS3560"
+}
+
+course --> instructor1 : instructor1
+course --> textbook1 : textbook1
+
+@enduml
