@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Employee {
+    - firstName: String
+    - lastName: String
+    - socialSecurityNumber: String
+
+    + Employee(firstName : String, lastName : String, socialSecurityNumber : String)
+    + getFirstName(): String
+    + getLastName(): String
+    + getSocialSecurityNumber(): String
+    + setFirstName(firstName: String): void
+    + setLastName(lastName: String): void
+    + setSocialSecurityNumber(socialSecurityNumber: String): void
+}
+
+class SalariedEmployee {
+    - weeklySalary: double
+
+    + SalariedEmployee(firstName: String, lastName: String, socialSecurityNumber: String, weeklySalary: double)
+    + getWeeklySalary() : double
+    + setWeeklySalary(weeklySalary: double): void
+}
+
+
+class HourlyEmployee {
+    - wage : double
+    - hours : double
+
+    + HourlyEmployee(firstName : String, lastName : String, socialSecurityNumber : String, wage : double, hours : double)
+    + getWage() : double
+    + getHours() : double
+    + setWage(wage : double) : void
+    + setHours(hours : double) : void
+}
+
+class CommissionEmployee {
+    - grossSales : double
+    - commissionRate : double
+
+    + CommissionEmployee(firstName : String, lastName : String, socialSecurityNumber : String, grossSales : double, commissionRate : double)
+    + getGrossSales() : double
+    + getCommissionRate() : double
+    + setGrossSales(grossSales : double) : void
+    + setCommissionRate(commissionRate : double) : void
+}
+
+class BaseEmployee {
+    - baseSalary : double
+
+    + BaseEmployee(firstName : String, lastName : String, socialSecurityNumber : String, baseSalary : double)
+    + getBaseSalary() : double
+    + setBaseSalary(baseSalary : double) : void
+}
+
+Employee <|-- SalariedEmployee
+Employee <|-- HourlyEmployee
+Employee <|-- CommissionEmployee
+Employee <|-- BaseEmployee
+
+@enduml
