@@ -1,16 +1,27 @@
 @startuml
 'https://plantuml.com/object-diagram
 
-object London
-object Washington
-object Berlin
-object NewYork
+ object "ships : Ship[]" as ships
 
-map CapitalCity {
- UK *-> London
- USA *--> Washington
- Germany *---> Berlin
-}
+ object "ship1 : Ship" as ship1 {
+     name = "Veil"
+     yearShipBuilt = "2075"
+ }
 
-NewYork --> CapitalCity::USA
-@enduml
+ object "ship2 : CruiseShip" as ship2 {
+     name = "Titanic"
+     yearShipBuilt = "1950"
+     maxNumPassengers = 3000
+ }
+
+ object "ship3 : CargoShip" as ship3 {
+     name = "Aziz"
+     yearShipBuilt = "2026"
+     cargoCapacity = 200
+ }
+
+ ships --> ship1 : [0]
+ ships --> ship2 : [1]
+ ships --> ship3 : [2]
+
+ @enduml
